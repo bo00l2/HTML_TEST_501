@@ -8,13 +8,51 @@
 <body>
     <style>
         .container {
-        display: flex;
+            height: 1000px;
+            /* 기본 방향 */
+        /* flex-direction : row */
+            /* 가로 방향 */
+            display: flex;
+        
+        flex-direction: column;
+        /*  flew-nowrap
+        기본적으로 줄바꿈이 안되어있음*/
+
+        /* flex-wrap: wrap; */
+        /* flex-flow: row wrap; */
+        /* 방향과 줄넘김 여부를 한번에 작성 가능 */
+/* 
+        정렬 기준 2가지,
+        주축, 교차축
+        주축 : 가로, 교차축 : 세로
+        1) 주축 정렬 
+        justify-content: flex-start(왼쪽 정렬);
+        flex-end(오른쪽 정렬)
+        baseline(텍스트 기준 정렬)
+
+        2) 교차축 정렬
+        align-items: flex-start(위로 정렬) 
+        flex-end(아래) flex-center(가운데)
+        space-between(여백 균등 분배) 
+        space-around 여백 포함 중앙
+        baseline (텍스트 기준 정렬)
+        */
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        .box {
+            border: 1px solid red;
+            width: 200px;
         }
     </style>
 </body>
 <div class="container">
-    <div>Box 1</div>
-    <div>Box 2</div>
-    <div>Box 3</div>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <div class="box">Box 4</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 6</div>
    </div>
 </html>
