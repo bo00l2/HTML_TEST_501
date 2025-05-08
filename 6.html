@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>gallery</title>
+</head>
+<body>
+    <style>
+        .pic {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 100px;
+        }
+        .pic img{
+            width: 120%;
+            height: 400px;
+            object-fit: cover; 
+            /* 이미지 비율 유지하며 채우기 */
+        }
+    </style>
+    <h1><a href="index.html">WEB</a></h1>
+    <div id="grid">
+        <ol>
+            <li><a href="1.html">HTML</a></li>
+            <li><a href="2.html">CSS</a></li>
+            <li><a href="3.html">JavaScript</a></li>
+            <li><a href="4.html">Introduce myself</a></li>
+            <li><a href="5.html">Introduce myself Box model</a></li>
+            <li><a href="6.html">mini test</a></li>
+        </ol>
+        <div id="article">
+            <h2>사진첩</h2>
+            <div class="pic">
+                <img src="img/pic1.jpg">
+                <img src="img/pic2.jpg">
+            </div>
+            <h2>상품 목록</h2>
+            <div class="pic">
+                <img src="img/food1.jpg">
+                <img src="img/food2.jpg">
+                <img src="img/food3.jpg">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

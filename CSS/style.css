@@ -14,6 +14,7 @@ h1 {
     margin: 0;
 }
 
+
 #grid>ol {
     /* ol, 모든 ol 요소를 의미
     #grid ol, 아이디 grid인 요소 하위에 있는 모든 ol 요소를 가리킴 */
@@ -63,7 +64,7 @@ h1 {
 }
 
 h2 {
-    margin-top: 100px;
+    margin-top: 0;
 }
 
 .container {
