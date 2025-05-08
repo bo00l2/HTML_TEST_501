@@ -1,0 +1,67 @@
+#grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 45px;
+    text-align: center;
+    border-bottom: 1px solid grey;
+    margin: 0;
+}
+
+#grid>ol {
+    /* ol, 모든 ol 요소를 의미
+    #grid ol, 아이디 grid인 요소 하위에 있는 모든 ol 요소를 가리킴 */
+    /* #grid>ol : 아이디 grid인 요소 하위에 있는 모든 ol 요소를 가리킴 */
+    border-right: 1px solid grey;
+    width: 100px;
+    margin-left: 20px;
+    margin-top: 0;
+    padding: 20px;
+}
+
+#article {
+    padding-left: 25px;
+    padding-top: 20px;
+}
+
+/* h1 {
+            border: 5px solid red;
+        } */
+
+.saw {
+    border: 5px solid red;
+    padding: 0;
+}
+
+#box1_inline {
+    border: 5px solid red;
+    display: inline;
+}
+
+#box1_block {
+    border: 5px solid red;
+    display: block;
+}
+
+#dot_inline {
+    border: 10px dotted lightpink;
+    display: inline;
+    margin-bottom: 100px;
+}
+
+.box_base {
+    border: 5px double blue;
+    display: inline;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    margin-top: 100px;
+}
