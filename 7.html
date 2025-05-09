@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>gallery</title>
+</head>
+<body>
+    <style>
+        .pic {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 100px;
+            margin-top: 20px;
+        }
+
+        @keyframes anim {
+            /* 초기, 중간, 마지막 단계로 화면에 표시 */
+            0% { 
+                opacity: 0;
+                transform: translateX(50px) scale(0.9) rotate(-5deg);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateX(10px) scale(1.02) rotate(2deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scale(1) rotate(0deg);
+            }
+        }
+
+        .pic img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover; 
+            border: 5px solid lightcoral;
+            /* 이미지 비율 유지하며 채우기 */
+            text-align: center;
+            transition: transform 0.2s;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .anim {
+            animation: anim 1.5s ease-in-out 0.2s 1 normal both;
+            animation-play-state: running;
+        }
+                
+        .pic img:hover {
+            background-color: lightgreen;
+            transform: scale(1.05);
+        }
+
+        .section-divider {
+            border-top: 1px solid black;
+            margin: 50px 0;
+        }
+
+    </style>
+    <h1><a href="index.html">WEB</a></h1>
+    <div id="grid">
+        <ol>
+            <li><a href="1.html">HTML</a></li>
+            <li><a href="2.html">CSS</a></li>
+            <li><a href="3.html">JavaScript</a></li>
+            <li><a href="4.html">Introduce myself</a></li>
+            <li><a href="5.html">Introduce myself Box model</a></li>
+            <li><a href="6.html">mini test</a></li>
+            <li><a href="7.html">애니메이션, transform</a></li>
+        </ol>
+        <div id="article">
+            <h2 id="dot_inline">사진첩</h2>
+            <div class="pic">
+                <div class="pic anim">
+                    <img src="img/pic1.jpg">
+                    <img src="img/pic2.jpg">
+                    <img src="img/pic3.jpg">
+                    <img src="img/pic4.jpg">
+                </div>                
+            </div>
+            <div class="section-divider"></div>
+            <h2 id="dot_inline">상품 목록</h2>
+            <div class="pic">
+                <div class="pic anim">
+                    <p>블루베리 케이크<br><img src="img/food1.jpg"></p>
+                    <p>아이스크림 머핀<br><img src="img/food2.jpg"></p>
+                    <p>초코 케이크<br><img src="img/food3.jpg"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
