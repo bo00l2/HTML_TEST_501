@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>script 태그를 이용한 연습</h1>
+    <!-- <script></script> 태그를 이용해서,  js 사용해보기 -->
+    <h2>자바스크립트 문법을 연습 방법, script 태그 사용 가능,
+        2번째, 콘솔에서 확인 가능
+        .length 속성, 문자열의 갯수 파악
+    </h2>
+    <script>
+        document.write("문자열 내장 기능 이용, 문자열 길이 구하는 예시 : "+"hello".length)
+        document.write("<br>")
+        document.write("hello".length)
+    </script>
+    <h2>자바스크립트 태그 안에서 기본 사용법 2</h2>
+    <input type="text" placeholder="키 입력시 마다 경고창 발생" 
+    onkeydown="alert('키입력됨!')">
+
+    <input type="text" placeholder="변경마다 알림 발생" 
+    onchange="alert('글자 변경할 때마다 알림')">
+    <!-- <input type="button" value="bye" onclick="alert('bye')"> -->
+
+    <h2>자바스크립트 태그 안에서 기본 사용법 1</h2>
+    <script>
+
+        // 자바스크립트의 내장 객체 중 한가지
+        // write : 함수는 웹 브라우저 화면에 출력
+        document.write('hello world')
+        document.write('<br>')
+        document.write('월요팅')
+        document.write('<br>')
+        document.write('1+1')
+    </script>
+    <p>배고픔</p>
+</body>
+</html>
