@@ -7,6 +7,20 @@
 </head>
 <body>
     <h1>script 태그를 이용한 연습</h1>
+
+    <h2>변수 반대 상수, 대입 연산자</h2>
+    <script>
+        var x = 1 // 옛날 방식
+        let y = 2 // 요즘 방식
+    </script>
+
+    <!-- show 버튼을 만들어서, 해당 이미지가 보이는 기능 만들기 -->
+    <img id="sample_img1" src="/img/food1.jpg" alt="샘플이미지1" width="300px">
+    <input type="button" value="show" 
+    onclick="document.querySelector('#sample_img1').style.display='block'">
+    <input type="button" value="hide" 
+    onclick="document.querySelector('#sample_img1').style.display='none'">
+    
     <!-- <script></script> 태그를 이용해서,  js 사용해보기 -->
     <h2>자바스크립트 문법을 연습 방법, script 태그 사용 가능,
         2번째, 콘솔에서 확인 가능

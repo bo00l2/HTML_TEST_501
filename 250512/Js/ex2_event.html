@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이벤트 설정 및 적용하는 다양한 방법</h1>
+    <h2>HTML 태그 내 onXXX 속성 직접 정의
+        장점 : 구현 간단, 단점 : 가독성, 재사용x
+    </h2>
+    <!-- 함수 사용 전 구조 -->
+    <input type="button" value="test1" onclick="alert('hi')">
+    <!-- 함수 사용 -->
+    <input type="button" value="test2-함수이용" onclick="sayHi()">
+
+    <h2> 2 자바스크립트에서 element.onclick 직접 할당
+        장점: 코드 분리, 단점: 
+    </h2>
+    <input type="button" id="btn1" value="Click Me">
+
+    <h2>3 addEventListener() 방식 권장 bb 장점: 하나의 요소에 여러 이벤트 등록 가능 </h2>
+    <input type="button" id="btn2" value="Click MeMe!">
+
+    <h2>4 기본 함수를 ES6 화살표 함수로 변경해서 더 간단히 이용해보기</h2>
+    <input type="button" id="btn3" value="Click MeMeMeNu">
+
+    <!-- <h2>미니1 </h2>
+    <input type="button" value="Click now" onclick="alert('클릭하셨네요?')">
+
+    <h2>미니2</h2>
+    <input type="button" id="Btn2" value="Click why">
+    
+    <h2>미니3</h2>
+    <input type="button" id="Btn3" value="Click what">
+
+    <h2>미니4</h2>
+    <input type="button" id="Btn4" value="Click Coooool"> -->
+
+    <script>
+        // script 태그는 가급적이면, body 태그의 가장 아랫 부분에 작성,
+        // html 렌더리(화면에 그려줌),자바스크립크 문법이
+        // 읽기 전에 먼저 화면에 그려주는게 우선.
+        // function 함수명(매개변수) {해당기능}
+
+        //방법1, html 태그 내부의 onclick 에서 작업
+        function sayHi(){
+            alert('함수 이용한 hi')
+        }
+
+        //방법2 <script> 내부에서 작업, 작업 공간의 분리
+        //onclick = 함수를 직접 정의
+        // 요소 : 먼저 버튼을 선택
+        document.getElementById('btn1').onclick=function () {
+            alert("요소에 직접 onclick 붙여서 이벤트 처리")
+        }
+
+        // 방법3
+        // 특정 요소(버튼, 이미지 등)를  선택
+        //const 상수명, 변경 불가하고, 재할당 안됨
+        // btn -> 해당 버튼2를 가리키고 있다.
+        const btn = document.getElementById('btn2')
+        //이벤트 적용.
+        //기본 문법 btn.addEventListener(액션행위, 실행할 함수)
+        // 액션행위 : 1) click, dbclick, mousedown, mouseup, mouseenter등
+        btn.addEventListener('click', function(){
+            alert("방법 3번째 이벤트 처리")})
+
+        //방법4 기본 함수를 ES6 화살표 함수로 변경해서 더 간단히 이용
+        // 화살표 함수 기본 문법 : (매개변수) => 행위(함수의 기능)
+        const handleClick2 = function test() { alert("기본 함수 이용")}
+        const handleClick = () => alert("화살표 함수로 더 간단히 이용")
+        
+        // 요소 선택하는 방법들
+        const btntn = document.getElementById('btn3')
+        const btntnn = document.querySelector('#btn3')
+        // 이벤트를 적용하는 방법
+        btn3.addEventListener('click', handleClick)
+
+    </script>
+    
+    <h2>2 element.onclick 활용</h2>
+    <img id="sample_img1" src="/img/food2.jpg" alt="샘플이미지1" width="300px">
+    <input id=BTN1 type="button" value="show">
+    <input id=BTN2 type="button" value="hide">
+    <script>
+        //미니2
+        document.getElementById('BTN1').onclick=function(){
+            document.querySelector('#sample_img1').style.display='block'
+        }
+        document.getElementById('BTN2').onclick=function(){
+            document.querySelector('#sample_img1').style.display='none'
+        }
+    </script>
+
+
+    <h2>3 addEventListener 활용</h2>
+    <img id="sample_img2" src="/img/food3.jpg" alt="샘플이미지2" width="300px">
+    <input id=BTN3 type="button" value="show">
+    <input id=BTN4 type="button" value="hide">
+    <script>
+        //미니3
+        const BTN = document.getElementById('BTN3')
+        const BTNN = document.getElementById('BTN4')
+        BTN.addEventListener('click', function(){
+            document.querySelector('#sample_img2').style.display='block'
+        })
+        BTNN.addEventListener('click', function(){
+            document.querySelector('#sample_img2').style.display='none'
+        })
+    </script>
+    
+    <h2>4 기본 함수 화살표 함수로 활용</h2>
+    <img id="sample_img3" src="/img/cat_jpg.jpg" alt="샘플이미지3" width="300px">
+    <input id=btn5 type="button" value="show">
+    <input id=btn6 type="button" value="hide">
+    <script>
+        //미니4
+        const BTNclick = () => document.getElementById('sample_img3').style.display='block'
+        const BTNCclick = () => document.getElementById('sample_img3').style.display='none'
+        
+        const BTN5 = document.getElementById('btn5')
+        const BTN6 = document.getElementById('btn6')
+        
+        BTN5.addEventListener('click', BTNclick)
+        BTN6.addEventListener('click', BTNCclick)
+    </script>
+
+    <h2>버튼 하나로 show/hide 기능 구현</h2>
+    <input type="button" value="show/hide" onclick="ImgShowHide()"> 
+    <!-- 클릭할 때 함수 호출 -->
+    <img id="if_img" src="/img/lemon.jpg" alt="if문" width="300px">
+    
+    <script>
+        function ImgShowHide() { // show/hide 함수
+            const img = document.getElementById('if_img')
+            if (img.style.display=='none'){ // 이미지가 안 보일 때, 보이게
+                img.style.display='block'
+            }
+            else { // 이미지가 보이면 보이지 않도록
+                img.style.display='none'
+            }
+        }
+
+    </script>
+
+</body>
+</html>
