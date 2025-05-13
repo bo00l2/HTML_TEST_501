@@ -126,10 +126,15 @@ nav {
     padding: 5px;
 }
 
+/* 본문 작업 */
 .contents {
+    display: grid;
+    grid-template-columns: 200px 1fr;
     width: 1000px;
     /* 위,아래는 50px 여백, 좌.우는 자동 */
-    margin: 50px auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 0;
 }
 
 main > section {
@@ -145,7 +150,7 @@ main div {
     margin-top: 20px;   
 }
 
-main h2 {
+main h3 {
     font-size: 1.2em;
     line-height: 2.2;
 }
@@ -194,4 +199,30 @@ footer {
     float: left;
     padding: 5px 20px;
     border-right: 1px solid #ddd;
+}
+
+#bottomMenu ul li:last-child {
+    border: none;
+}
+
+#bottomMenu ul li a, #bottomMenu ul li a:visited {
+   font-size: 15px;
+   color: #666;
+}
+
+#sideBar {
+    width: 200px;
+    float: left;
+    padding: 20px;
+    margin-left: 30px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* 그리드를 이용해서, 2분할하고
+section을 div로 감싸서 id="article" */
+
+#article {
+    margin-left: 50px;
 }
