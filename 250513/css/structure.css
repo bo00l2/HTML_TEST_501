@@ -161,7 +161,8 @@ main h3 {
 }
 
 .detail > img {
-    width: 30%;
+    width: 20px;
+    height: 40pxss;
     float: left;
     margin-right: 50px;
     border-radius: 20px;
