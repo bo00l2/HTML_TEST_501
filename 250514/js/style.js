@@ -44,3 +44,32 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
     // output의 내용을, html 태그인 pre 태그에 출력한다.
     document.getElementById('output').textContent = output
 })
+
+// 추가 작업, 프로필 이미지 변경시, 미리보기 화면에  파일 사진 나타내기
+document.getElementById('signupForm').file.addEventListener('change', 
+    function(){
+        // 동작원리
+        // 1) 파일 선택 2) 선택된 파일 3) 폼 양식의  파일에 변경 감지 이벤트 설정
+        //4) 파일 변경 될 때마다 미리 보기 화면에 이미지 교체를 해줌
+        // this : 자기 자신, -> document.getElementById('signupForm').file
+        // file[0] : 현재, 파일을 하나만 선택
+        //const file : 선택된 파일 이미지가 들어가 있음
+        const file = this.files[0]
+        // 조건, 무조건 이미지가 아님에도 화면에 출력을 하려고 하면 안됨
+        // 이미지만 출력 가능하기 때문
+        // 검사하기 -> 파일 검사 ->  확장자가 이미지인 경우에만 이미지로 판단
+        // 유효성 체크라고 함ㄴ
+
+        if(file && file.type.startsWith('image/')){
+            // FileReader 클래스, 웹브라우저에서 지원해줌
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // 이미지 미리보기 영역에 이미지 표시
+                // e.target.result 선택된 이미지
+                document.getElementById('profilePreview').src = e.target.result;
+            }
+            // 선택한 파일을 base64에서 인코딩하여 로드
+            reader.readAsDataURL(file)
+        }
+    }
+)
