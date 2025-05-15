@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 폼</title>
+    <title>회원가입 폼</title>
     <!-- CSS  외부 파일 연결 -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div id="container">
-    <h1>로그인 예시 폼</h1>
+    <h1>회원가입 예시 폼</h1>
     <!-- 회원 가입 입력 폼 시작 -->
     <!-- form 태그는 무언가 입력창들의 모음집, 그룹화
     앞단 -> 서버 전달 시 사용  -->
@@ -19,7 +19,7 @@
             <img id="profilePreview" src="img/user_profile.png">
          </div>
         <label>
-            아이디 : <input type="text" name="username"
+            유저명 : <input type="text" name="username"
              placeholder="유저명을 입력하세요" required>
         </label>
         <!-- 비밀번호 입력 -->
@@ -27,13 +27,45 @@
             패스워드 : <input type="password" name="password">
         </label>
         <!-- 체크박스 이용해서, 그룹: 취미 선택 -->
-        
+        <fieldset>
+            <legend>본인이 좋아하는 메이크업 제품은?</legend>
+            <label>베이스<input type="checkbox" name="hobby" value="베이스 메이크업"></label>
+            <label>아이<input type="checkbox" name="hobby" value="아이 메이크업"></label>
+            <label>립<input type="checkbox" name="hobby" value="립 메이크업"></label>
+            <label>스킨케어<input type="checkbox" name="hobby" value="스킨케어"></label>
+        </fieldset>
+
+        <!-- 라디오 버튼 : 성별 선택 -->
+        <label>
+            성별 <input type="radio" name="gender" value="남"> 남
+            <input type="radio" name="gender" value="여"> 여
+        </label>
+
+        <!-- 나이 숫자 입력 -->
+        <label>
+            나이 : <input type="number" name="age" min="1" max="100" require>
+        </label>
+
+        <!-- 날짜 입력 : 생년월일  -->
+        <label>
+            생년월일 : <input type="date" name="date">
+        </label>
+
+        <!-- 이메일 입력 -->
+         <label>
+            이메일 : <input type="email" name="email" required>
+        </label>
+
+        <!-- 프로필 사진 등록 -->
+         <label>
+            프로필 사진 등록 : <input type="file" name="file">
+        </label>
 
         <!-- 히든 필드 : 사용자에게 보이지 않고, 서버에 전달하는 용도 -->
         <input type="hidden" name="user_id" value="숨김값_test1234">
         
         <!-- 폼 제출하는 버튼 -->
-        <button type="submit">로그인</button>
+        <button type="submit">가입하기</button>
         <button type="reset">초기화</button>
     </form>
     </div>

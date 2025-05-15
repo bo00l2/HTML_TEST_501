@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 과제</title>
+    <!-- css 파일 분리해서 불러오는 코드 -->
+    <link rel="stylesheet" href="css/structure.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="logo">
+                <a href="#">
+                    <h1>Make up</h1>
+                </a>
+            </div>
+            <nav>
+                <ul id="topMenu">
+                    <li><a href="#">베이스</a></li>
+                    <li><a href="#">아이 메이크업</a></li>
+                    <li><a href="#">립 메이크업</a></li>
+                    <li><a href="#">스킨케어</a></li>
+                </ul>
+        </nav>
+        </header>
+    </div>
+
+    <main class="contents">
+        <!-- 사이드바 -->
+        <aside id="sideBar">
+            <h3>목록</h3>
+            <ul>
+                <li><a href="#">샘플 링크1</a></li>
+                <li><a href="#">샘플 링크2</a></li>
+                <li><a href="#">샘플 링크3</a></li>
+                <br><br>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </aside>
+
+        <!-- 본문 작업 -->
+        <div id="article">
+        <section id="headline">
+            <h2>베이스 메이크업</h2>
+            <div class="detail">
+                <img src="/img/cat_jpg.jpg" alt="샘플이미지1">
+                <b>
+                    <p>샘플 설명1 강조</p>
+                </b>
+                <p>샘플 설명에 관한 여러가지 내용을 담기 등.</p>
+            </div>
+            <div class="schedule">
+                <h3>샘플 보조 제목1</h3>
+                <ul>
+                    <li>샘플 하위 일정</li>
+                    <li>샘플 하위 일정2 추가 사항 넣기</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="headline1">
+            <h2>아이 메이크업</h2>
+            <div class="detail">
+                <img src="/img/cat_jpg.jpg" alt="샘플이미지2">
+                <b>
+                    <p>샘플 설명1-2 강조</p>
+                </b>
+                <p>샘플 설명에 관한 여러가지 내용을 담기 등.</p>
+            </div>
+        </section>
+
+        <section id="headline2">
+            <h2>립 메이크업</h2>
+            <div class="detail">
+                <img src="/img/cat_jpg.jpg" alt="샘플이미지3">
+                <b>
+                    <p>샘플 설명1 강조</p>
+                </b>
+                <p>샘플 설명에 관한 여러가지 내용을 담기 등.</p>
+            </div>
+            <div class="schedule">
+                <h3>스킨케어</h3>
+                <ul>
+                    <li>샘플 하위 일정</li>
+                    <li>샘플 하위 일정2 추가 사항 넣기</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="headline3">
+            <h2>스킨케어</h2>
+            <div class="detail">
+                <img src="/img/cat_jpg.jpg" alt="샘플이미지4">
+                <b>
+                    <p>샘플 설명1 강조</p>
+                </b>
+                <p>샘플 설명에 관한 여러가지 내용을 담기 등.</p>
+            </div>
+            <div class="schedule">
+                <h3>샘플 보조 제목1</h3>
+                <ul>
+                    <li>샘플 하위 일정</li>
+                    <li>샘플 하위 일정2 추가 사항 넣기</li>
+                </ul>
+            </div>
+        </section>
+       </div>
+       <!-- 사이드바 추가 -->
+       
+    </main>
+    <footer>
+        <section id="bottomMenu">
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">샘플약관</a></li>
+                <li><a href="#">사이트맵</a></li>
+            </ul>
+        </section>
+    </footer>
+    <!-- 스크립트 파일 불러오는 위치, 맨밑에 js 파일을 두는 이유?
+    : 먼저, 화면에 렌더링 그림을 먼저 그려줘야 함.
+    뒤에서 천천히 자바스크립트를 읽기 -->
+</body>
+</html>
