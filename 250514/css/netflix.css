@@ -183,10 +183,14 @@ only screen : 오직 화면만 처리함 */
 .banner-content {
     border-radius: 6px;
     /* background: linear-gradient(to right, #651c3d 0%, #280a2b 60%); */
-    background: linear-gradient(to right, #1a1515 0%, #494949 60%);
+    background: linear-gradient(to right, #1a1515 0%, #9b4287 60%);
     padding: 40px;
     margin-bottom: 40px;
 }
+
+/* #banner-content:hover {
+
+} */
 
 #banner p {
     font-size: 20px;
@@ -194,7 +198,8 @@ only screen : 오직 화면만 처리함 */
     margin-bottom: 30px;
 }
 
-#banner button {
+#banner button,
+ .membership-content button{
     border: 0;
     outline: 0;
     border-radius: 5px;
@@ -220,16 +225,250 @@ only screen : 오직 화면만 처리함 */
     color: #fff;
 }
 
+
 /* 멤버쉽 부분 작업 */
+.membership-content {
+    border-radius: 6px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    background: linear-gradient(to right, rgba(101,28, 61, 0.9) 0%,
+    rgba(40, 10, 43, 0.5) 60%), url(../img/test1.jpg) no-repeat right center;
+    background-size: cover;
+    /* 만약, 배경이미지를 가로, 세로 비율 유지해서, 표현하고 싶을 경우 */
+} 
+
+.membership-content p {
+    font-size: 20px;
+    color: rgb(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
+
 
 /* 선택 가이드 부분 작업 */
+#choice p {
+    font-size: 22px;
+    /* 투명도 0~1, 0.7 표현, 70% 불투명도, 30%투명 */
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
 
+.choice-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.card {
+    /* flex : 1 이라는 설정시 포함된 내용의 의미
+    동등한 비율 분배에 많이 사용
+    flex-grow : 이유 공간을 얼마나 차지할지 1로 설정
+    flex-shrink : 공간이 줄어들 때 얼마나 줄일지 1로 설정, 같은 비율로 줄어듦
+    flex-basis : 초기 크기(기준크기) 0% (기본크기 없음, 처음에 0부터 시작) */
+    flex: 1;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, rgba(25,32,68,1) 0%, rgba(32,19,34,1) 62%);
+    padding-top: 40px;
+    height: 300px;
+    position: relative;
+}
+
+.subject-img {
+    width: 80px;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+.subject-img img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+}
 
 /* 반응형 선택 가이드 부분 작업 */
-
+@media only screen and (min-width: 769px) and (max-width: 1200px) { 
+    .card {
+        flex-basis: calc(50% - 15px);
+    }    
+}
 
 /* FAQ 부분 작업 */
+ #faq .accordion {
+    width: 100%;
+    max-width: 750px;
+    margin:  60px auto;
+ }
+
+.accordion li {
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+    /* 기준위치 */
+}
+
+/* 가상요소 : html 수정하지 않고, 시각적인 효과를 주기 위해서 사용
+요소 뒤에 (::) 콜론 2개를 붙여서 사용함
+::after : 해당 요소의  마지막 부분에 콘텐츠를 추가 가능함. 
+주의사항, 반드시 content 속성이 있어서 동작함 
+
+::before : 요소 앞쪽에 추가함
+*/
+.accordion li label::after {
+    content: '\2b';
+    font-size: 40px;
+    position: absolute;
+    right: 20px;
+    transition: 0.5s;
+}
+
+/* .accordion input[type="radio"]{
+    display: none;
+} */
+
+.accordion .content {
+    background: #3b3b3b;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* input[type="radio"] 체크하면 */
+/* + 바로 다음 형제 요소에 대해서 선택하는 기능*/
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+
+.accordion input[type="radio"]:checked + label::after{
+    transform: rotate(-135deg);
+}
+
+.newsletter {
+    padding: 20px 10%;
+}
+
 
 
 /* footer 부분 작업 */
+footer {
+    padding: 60px 10%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-betweens;
+    align-items: start;
+    gap: 30px;
+}
+
+.footer-content a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.left {
+    flex-basis: 60%;
+}
+
+.center, .right {
+    flex-basis: 20%;
+    vertical-align: top;
+}
+
+.col h2 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.col h3 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin-bottom: 40px;
+}
+/* .footer-nav 요소 하위에 li 요소 중에서
+마지막 요소를 제외한 전체 : 오른쪽 선 생성 */
+.footer-nav li:not(:last-child){
+    padding-right: 20px;
+    border-right: 1px solid #eee;
+}
+
+.footer-info {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.socials a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+}
+
+.copyright {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px
+}
+.socials {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.footer-content p {
+    font-size: 14px;
+    line-height: 0.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+
 /* 반응형 footer 부분 작업 */
+@media only screen and (max-width:768px) {
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .col {
+        flex-basis: 100%;
+    }
+    .col h2 {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .col h3 {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
