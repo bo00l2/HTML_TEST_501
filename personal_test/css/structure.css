@@ -34,6 +34,7 @@ header {
     width: 100%;
     height: 100px;
     background-color: lightcoral;
+    padding: 20px 0;
 }
 
 #logo {
@@ -51,6 +52,8 @@ header {
     font-weight: 700;
     font-size: 40px;
     color: #fff;
+    margin: 0;
+    padding-left: 20px;
     /* 텍스트 그림자 넣기
     옵션 0 : 가로 오프셋 텍스트 기준으로 그림자의 수평 위치 조정
     양수: 오른쪽, 음수: 왼쪽, 
@@ -95,21 +98,21 @@ nav {
     0.9em, 부모 요소의 현재 글꼴 크기보다 10% 더 작음,
     1em = 16px
     1.1em = 16 * 1.1 = 17.6px */
-    font-size: 20px;
+    font-size: 25px;
     color: #fff;
     font-weight: 600;
-    padding: 0 20px;
+    padding: 0 70px;
 
 }
 
 /* 반응형 화면 맞춤 pc, moblie */
-@media (min-width: 768px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .detail {
         flex-direction: row;
     }
 }
 
-@media (max-width: 767px){
+@media (min-width: 480px) and (max-width: 767px){
      .detail {
         flex-direction: column;
      }
@@ -129,7 +132,7 @@ nav {
  */
 #topMenu > li > a:hover {
     color: lightgray;
-    text-shadow: 0 5px 0 #222;
+    text-shadow: 0 5px 0 #2f2f2f;
 }
 
 .tooltip {
@@ -148,13 +151,22 @@ nav {
 
 /* 본문 작업 */
 .contents {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    width: 1000px;
+    display: flex;
+    align-items: flex-start;
+    /* grid-template-columns: 200px 1fr; */
+    width: 10000px;
     /* 위,아래는 50px 여백, 좌.우는 자동 */
-    margin-top: 20px;
+    /* margin-top: 20px;
     margin-bottom: 50px;
-    margin-left: 0;
+    margin-left: 0; */
+    gap: 20px;
+}
+
+#article section {
+    width: 250px;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 main > section {
@@ -188,12 +200,20 @@ main h3 {
     color: #222;
 }
 
+.detail {
+    margin-top: 10px;
+}
+
 .detail > img {
     width: 200px;
     height: 200px;
     float: left;
     margin-right: 50px;
     border-radius: 20px;
+}
+
+.schedule {
+    margin-top: 10px;
 }
 
 .schedule h3 {
@@ -242,10 +262,10 @@ footer {
 }
 
 #sideBar {
-    width: 200px;
+    width: 150px;
     float: left;
     padding: 20px;
-    margin-left: 30px;
+    margin-left: 20px;
     background-color: #f8f8f8;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -255,5 +275,9 @@ footer {
 section을 div로 감싸서 id="article" */
 
 #article {
-    margin-left: 50px;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    /* margin-left: 50px; */
+    flex-wrap: wrap;
 }
