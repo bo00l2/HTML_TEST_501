@@ -98,7 +98,7 @@ nav {
     0.9em, 부모 요소의 현재 글꼴 크기보다 10% 더 작음,
     1em = 16px
     1.1em = 16 * 1.1 = 17.6px */
-    font-size: 25px;
+    font-size: 30px;
     color: #fff;
     font-weight: 600;
     padding: 0 40px;
@@ -159,6 +159,7 @@ nav {
     /* margin-top: 20px;
     margin-bottom: 50px;
     margin-left: 0; */
+    margin-bottom: 300px;
     gap: 20px;
 }
 
@@ -177,11 +178,16 @@ main h2 {
     /* width: auto;
     height: auto; */
     font-family: "Jua";
-    font-size: 30px;
-    line-height: 2.5;
+    font-size: 25px;
+    line-height: normal;
     color: #ffffff;
-    display: inline-block;
+
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 20px;
+    padding: 10px 20px;
     background-color: #7cd483;
     cursor: pointer;
 }

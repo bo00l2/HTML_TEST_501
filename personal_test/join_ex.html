@@ -16,15 +16,15 @@
     <form id="signupForm">
         <!-- 유저명 텍스트 입력창 -->
          <div id="profilePreviewBox">
-            <img id="profilePreview" src="img/user_profile.png">
+            <img id="profilePreview" src="/personal_test/img/profile.jpg">
          </div>
         <label>
-            유저명 : <input type="text" name="username"
-             placeholder="유저명을 입력하세요" required>
+            이름 : <input type="text" name="username"
+             placeholder="이름을 입력하세요" required>
         </label>
         <!-- 비밀번호 입력 -->
         <label>
-            패스워드 : <input type="password" name="password">
+            비밀번호 : <input type="password" name="password">
         </label>
         <!-- 체크박스 이용해서, 그룹: 취미 선택 -->
         <fieldset>
@@ -35,12 +35,7 @@
             <label>스킨케어<input type="checkbox" name="hobby" value="스킨케어"></label>
         </fieldset>
 
-        <!-- 라디오 버튼 : 성별 선택 -->
-        <label>
-            성별 <input type="radio" name="gender" value="남"> 남
-            <input type="radio" name="gender" value="여"> 여
-        </label>
-
+        
         <!-- 나이 숫자 입력 -->
         <label>
             나이 : <input type="number" name="age" min="1" max="100" require>
